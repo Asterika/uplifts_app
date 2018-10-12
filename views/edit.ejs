@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <% include ./partials/head.ejs %>
+    <title></title>
+  </head>
+  <body>
+    <div>
+      <!-- <% include ./partials/nav.ejs %> -->
+      <ul class="main-nav">
+        <li class="left"><button type="button" class="btn btn-outline-info">LOGO GOES HERE</button>
+        <li class="right"><a href="/uplifts/gallery">GALLERY</a></li>
+        <li class="right"><a href="/">LOGOUT</a></li>
+      <ul>
+    </div>
+    <div class="container">
+      <h1>reLIFT</h1>
+        <h2>Edit your upLIFT</h2>
+          <form action="/uplifts/gallery" method="POST">
+            Edit your upLIFT: <input type="text" name="create"/><br /><br />
+            Edit your expand: <input type="textarea" name="expand" /><br /><br />
+            Edit your image: <input type="image" name="image" /><br /><br />
+          <!-- submit button -->
+          <!-- <form action="/gallery" method="POST"> -->
+            <input type="submit" value="Edit &nbsp;upLIFT" class="btn btn-outline-info"/>
+          </form>
+          <!-- <form action="/session?_method=DELETE" method="POST">
+            <input type="submit" value="Logout" class="waves-effect waves-light btn"/>
+          </form> -->
+            <!-- <button type="button" class="btn btn-outline-info">
+            <input type="submit" value="Create upLIFT"/>
+          </form> -->
+    </div>
+  </body>
+</html>

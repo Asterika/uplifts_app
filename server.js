@@ -54,16 +54,28 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-//step 1 - create a new route that will enable to create a new uplift
+//step 1 - create a NEW ROUTE that will enable to create a new uplift
 app.get('/uplifts/new', (req, res) => {
   // res.send('new');
   res.render('new.ejs');
 })
 
-//step 2 - create a index route that will render created uplifts
+//step 2 - create an INDEX ROUTE that will render created uplifts
 app.get('/uplifts/gallery', (req, res) => {
   // res.send('gallery');
   res.render('gallery.ejs');
+})
+
+//step 4 - create an edit route to allow users to edit their uplifts
+app.get('/uplifts/:id/edit', (req, res) => {
+  res.send('edit');
+})
+
+//step 3 - create a CREATE ROUTE to send(post) data from new page to gallery
+app.post('/uplifts/gallery', (req, res) => {
+  res.send('hi');
+  //need a way to send info from form (req.body) of new page to the gallery
+  // req.body.push
 })
 
 //======================

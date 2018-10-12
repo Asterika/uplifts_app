@@ -19,7 +19,8 @@ body {
 }
 
 .right {
-  margin: 6px 10px;
+  font-size: 20px;
+  margin: 6px 15px;
 }
 
 /* to float navbar logo to the left */
