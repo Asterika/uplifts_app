@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <% include ./partials/head.ejs %>
     <title></title>
   </head>
   <body>
-    <h1>Welcome!</h1>
+    <div>
+      <!-- <% include ./partials/nav.ejs %> -->
+      <ul class="main-nav">
+        <li class="right"><button type="button" class="btn btn-outline-info">CREATE</button>
+        <li class="right"><button type="button" class="btn btn-outline-info">LOGOUT</button></li>
+      <ul>
+    </div>
+    <div class="container">
+      <h1>Welcome!</h1>
+        <p>This is the Gallery Page</p>
+    </div>
   </body>
 </html>

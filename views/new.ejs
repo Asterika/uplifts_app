@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <% include ./partials/head.ejs %>
     <title></title>
   </head>
   <body>
-    <h1>upLIFT</h1>
-    <h2>Capture this Moment</h2>
-    <form action="/uplifter" method="POST">
-      Create your upLIFT: <input type="text" name=""/><br /><br />
-      Expand: <input type="textarea" name="expand" /><br /><br />
-      Select an image: <input type="image" name="image" /><br /><br />
-      <!-- submit button -->
-      <input type="submit" value="Create upLIFT"/>
-    </form>
+    <div>
+      <!-- <% include ./partials/nav.ejs %> -->
+      <ul class="main-nav">
+        <li class="left"><button type="button" class="btn btn-outline-info">LOGO GOES HERE</button>
+        <li class="right"><button type="button" class="btn btn-outline-info">GALLERY</button>
+        <li class="right"><button type="button" class="btn btn-outline-info">LOGOUT</button></li>
+      <ul>
+    </div>
+    <div class="container">
+      <h1>upLIFT</h1>
+        <h2>Capture this Moment - Create a New upLIFT</h2>
+          <form action="/uplifts" method="POST">
+            Create your upLIFT: <input type="text" name=""/><br /><br />
+            Expand: <input type="textarea" name="expand" /><br /><br />
+            Select an image: <input type="image" name="image" /><br /><br />
+            <!-- submit button -->
+            <input type="submit" value="Create upLIFT"/>
+          </form>
+    </div>
   </body>
 </html>
