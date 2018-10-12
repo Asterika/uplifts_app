@@ -17,7 +17,7 @@ const PORT =  process.env.PORT || 3000;
 //      DATABASE
 //======================
 //how to connect to db either via Heroku or locally
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/' + 'uplifter';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/' + 'uplifts';
 
 //connect to Mongo
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
@@ -55,14 +55,15 @@ app.get('/', (req, res) => {
 });
 
 //step 1 - create a new route that will enable to create a new uplift
-app.get('/uplifter/new', (req, res) => {
+app.get('/uplifts/new', (req, res) => {
   // res.send('new');
   res.render('new.ejs');
 })
 
-//step 2 - create a gallery/show route that will render created uplifts
-app.get('/uplifter/gallery', (req, res) => {
-  res.send('gallery');
+//step 2 - create a index route that will render created uplifts
+app.get('/uplifts/gallery', (req, res) => {
+  // res.send('gallery');
+  res.render('gallery.ejs');
 })
 
 //======================
