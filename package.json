@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Asterika/uplifter#readme",
   "dependencies": {
+    "ejs": "^2.6.1",
     "express": "^4.16.4",
     "method-override": "^3.0.0",
     "mongoose": "^5.3.2"

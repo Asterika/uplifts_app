@@ -54,6 +54,17 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
+//step 1 - create a new route that will enable to create a new uplift
+app.get('/uplifter/new', (req, res) => {
+  // res.send('new');
+  res.render('new.ejs');
+})
+
+//step 2 - create a gallery/show route that will render created uplifts
+app.get('/uplifter/gallery', (req, res) => {
+  res.send('gallery');
+})
+
 //======================
 //      LISTENER
 //======================
