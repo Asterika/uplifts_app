@@ -1,11 +1,11 @@
+//ORIGINAL UPLIFTS.JS INFO
 const mongoose = require('mongoose');
 
 //create a schema to establish type of data input into forms
 const upliftSchema = new mongoose.Schema({
-  create: String,
-  // img: String,
-  expand: String
-},
+    create: String,
+    expand: String
+  },
   { timestamps: true });
 
 //convert schema into model
