@@ -1,16 +1,16 @@
-//ORIGINAL UPLIFTS.JS INFO
+//require mongoose
 const mongoose = require('mongoose');
-
-//create a schema to establish type of data input into forms
-const upliftSchema = new mongoose.Schema({
-    type: String,
-    img: String,
-    description: String
-  },
-  { timestamps: true });
+//create new schema
+const upliftSchema = new mongoose.Schema(
+  {
+  type: String,
+  description: String,
+  img: String
+},
+  ({ timestamps: true }));
 
 //convert schema into model
 const Uplift = mongoose.model('Uplift', upliftSchema);
 
-//export model for later use
+//export log to use it later
 module.exports = Uplift;
