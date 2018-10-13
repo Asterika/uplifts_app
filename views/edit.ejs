@@ -9,14 +9,15 @@
       <!-- <% include ./partials/nav.ejs %> -->
       <ul class="main-nav">
         <li class="left"><button type="button" class="btn btn-outline-info">LOGO GOES HERE</button>
-        <li class="right"><a href="/uplifts/gallery">GALLERY</a></li>
+        <li class="right"><a href="/uplifts">GALLERY</a></li>
         <li class="right"><a href="/">LOGOUT</a></li>
       <ul>
     </div>
     <div class="container">
       <h1>reLIFT</h1>
         <h2>Edit your upLIFT</h2>
-          <form action="/uplifts/gallery" method="POST">
+        <!-- keep getting error - cannot PUT /uplifts/gallery - makes sense, need to add uplift.id once uplifts are added -->
+          <form action="/uplifts?_method=PUT" method="POST">
             Edit your upLIFT: <input type="text" name="create"/><br /><br />
             Edit your expand: <input type="textarea" name="expand" /><br /><br />
             Edit your image: <input type="image" name="image" /><br /><br />

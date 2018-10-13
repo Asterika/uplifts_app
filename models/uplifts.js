@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 //create a schema to establish type of data input into forms
 const upliftSchema = new mongoose.Schema({
   create: String,
-  expand: String,
-  img: String
+  // img: String,
+  expand: String
 },
   { timestamps: true });
 

@@ -6,6 +6,12 @@ const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const app = express();
 const db = mongoose.connection;
+//step 4b - require the uplifts model to draw the variable Uplift
+const Uplift = require('./models/uplifts.js');
+//require seed data using a variable
+const upliftSeed = require('./models/seed.js')
+
+const uplifts = ['gratitude', 'sacred', 'love'];
 
 //======================
 //        PORT
@@ -30,6 +36,14 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 //open the connection to Mongo
 db.on('open', ()=>{});
 
+//=========================
+//        SEED DATA
+//=========================
+// Uplift.create(upliftSeed, (error, data) => {
+//   if(error) console.log(error.message);
+//   console.log('added uplift data');
+// })
+
 //======================
 //     MIDDLEWARE
 //======================
@@ -46,6 +60,33 @@ app.use(express.json());
 //use method override -> allows POST, PUT, and DELETE from a form
 app.use(methodOverride('_method'));
 
+
+app.get('/seed', (req, res) => {
+  Uplift.create(
+    [
+      {
+        "create": "Pleasant Encounters",
+        "expand": "My barista and I reconnected today after a long time"
+      },
+      {
+        "create": "Nature refresh",
+        "expand": "I sat at the foot of a tree today and listened"
+      },
+      {
+        "create": "Self-care",
+        "expand": "I took time out of a busy day to eat"
+      },
+      {
+        "create": "Gratitude",
+        "expand": "Today, I am deeply grateful for the air I breathe, the body I inhabit, and the people who share my life journey"
+      }
+    ],
+    (err, data) => {
+      res.redirect('/uplifts');
+  }
+)
+});
+
 //======================
 //       ROUTES
 //======================
@@ -55,28 +96,70 @@ app.get('/', (req, res) => {
 });
 
 //step 1 - create a NEW ROUTE that will enable to create a new uplift
-app.get('/uplifts/new', (req, res) => {
+app.get('/new', (req, res) => {
   // res.send('new');
   res.render('new.ejs');
 })
 
 //step 2 - create an INDEX ROUTE that will render created uplifts
-app.get('/uplifts/gallery', (req, res) => {
-  // res.send('gallery');
-  res.render('gallery.ejs');
+app.get('/uplifts/', (req, res) => {
+  res.send(uplifts);
+  // Uplift.find({}, (error, allUplifts) => {
+  //   res.render('index.ejs', {
+  //     uplifts: allUplifts
+  //   });
+  // });
+});
+
+//step 3 - create a CREATE ROUTE to send(post) data from new page to gallery
+// app.post('/uplifts', (req, res) => {
+//   res.render('index.ejs');
+  //need a way to send info from form (req.body) of new page to the gallery
+  // req.body.push
+// })
+
+//step 7 - create a SHOW ROUTE
+app.get('/uplifts/:id', (req, res) => {
+  res.send(uplifts[req.params.id]);
+});
+  // Uplift.findById(req.params.id, (error, foundUplift) => {
+  //   res.render('show.ejs',
+  //   {
+  //     uplift: foundUplift
+  //   });
+  // });
+// });
+
+
+//step 5 - create a PUT ROUTE to update objects found by id
+//need to add uplift.id once seed data is added
+app.put('/uplifts/:id', (req, res) => {
+  Uplift.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel) => {
+    res.redirect('/uplifts');
+  });
+});
+
+//step 6 - create DELETE ROUTE
+app.delete('/uplifts/:id', (req, res) => {
+  // res.send('deleting');
+  Uplift.findByIdAndRemove(req.params.id, (err, data) => {
+    res.redirect('/uplifts');
+  })
 })
 
 //step 4 - create an edit route to allow users to edit their uplifts
 app.get('/uplifts/:id/edit', (req, res) => {
-  res.send('edit');
-})
-
-//step 3 - create a CREATE ROUTE to send(post) data from new page to gallery
-app.post('/uplifts/gallery', (req, res) => {
-  res.send('hi');
-  //need a way to send info from form (req.body) of new page to the gallery
-  // req.body.push
-})
+  //use findById to grab the individual data item
+  Uplift.findById(req.params.id, (err, foundUplift) => {
+    // res.send('edit');
+    //render this item (found by its id) on the edit page
+    res.render('edit.ejs',
+    {
+      uplift: foundUplift
+    }
+    );
+  });
+});
 
 //======================
 //      LISTENER

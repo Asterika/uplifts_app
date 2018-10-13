@@ -8,13 +8,23 @@
     <div>
       <!-- <% include ./partials/nav.ejs %> -->
       <ul class="main-nav">
-        <li class="right"><a href="/uplifts/new">CREATE</a></li>
+        <li class="left"><button type="button" class="btn btn-outline-info">LOGO GOES HERE</button>
+        <li class="right"><a href="/new">CREATE</a></li>
         <li class="right"><a href="/">LOGOUT</a></li>
       <ul>
     </div>
     <div class="container">
       <h1>Welcome!</h1>
         <p>This is the Gallery Page</p>
+        <div class="nested-container">
+          <ul>
+            <% for(let i = 0; i < uplifts.length; i++) { %>
+              <li>
+                <%=uplifts.create%>
+              </li>
+            <% } %>
+          </ul>
+        </div>
     </div>
   </body>
 </html>
