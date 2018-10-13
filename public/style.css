@@ -9,6 +9,24 @@ body {
   /* text-align: center; */
 }
 
+.container-uplifts {
+  align-content: space-around;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  padding: 4px 40px 40px 42px;
+  margin: 0 auto;
+}
+
+img {
+  height: 300px;
+  width: 400px;
+}
+
+.img-uplift {
+  align-self: center;
+}
+
 /* main nav class li right items need to float right in the navbar */
 .main-nav {
   display: flex;

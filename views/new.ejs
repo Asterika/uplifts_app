@@ -15,10 +15,25 @@
     </div>
     <div class="container">
       <h1>upLIFT</h1>
-        <h2>Capture this Moment - Create a New upLIFT</h2>
+        <h2>Create your upLIFT</h2>
           <form action="/uplifts" method="POST">
-            Create your upLIFT: <input type="text" name="create"/><br /><br />
-            Expand: <input type="textarea" name="expand" /><br /><br />
+            Today I...
+              <select name="typeName" id="typeDropDown"/>
+                <option value="adventured">Adventured</option>
+                <option value="celebrated">Celebrated</option>
+                <option value="connected">Connected</option>
+                <option value="created">Created</option>
+                <option value="enjoyed">Enjoyed</option>
+                <option value="gave">Gave</option>
+                <option value="honored">Honored</option>
+                <option value="laughed">Laughed</option>
+                <option value="marveled">Marveled</option>
+                <option value="played">Played</option>
+                <option value="received">Received</option>
+                <option value="shared">Shared</option>
+                <option value="stretched">Stretched</option>
+              </select><br /><br />
+            Expand: <input type="textarea" name="description" /><br /><br />
             <!-- Select an image: <input type="image" name="image" /><br /><br /> -->
           <!-- submit button -->
           <!-- <form action="/gallery" method="POST"> -->

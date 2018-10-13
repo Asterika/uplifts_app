@@ -16,13 +16,17 @@
     <div class="container">
       <h1>Welcome!</h1>
         <p>This is the Gallery Page</p>
+        <div class="container-uplifts">
           <ul>
             <% for(let i = 0; i < uplifts.length; i++) { %>
               <li>
-                <%=uplifts[i].create%>: <%=uplifts[i].expand%>
+                <%=uplifts[i].type%><br />
+                <img class="img-uplift" src="<%=uplifts[i].img%>"><br />
+                <%=uplifts[i].description%>
               </li>
             <% } %>
           </ul>
+        </div>
     </div>
   </body>
 </html>

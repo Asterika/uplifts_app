@@ -1,20 +1,22 @@
 //step 8 - create seed data
+//find a way to link images with type/category of create
+  //need a dropdown menu for create OR need an image database linked with certain tags
 const uplifts = [
   {
-    create: 'Pleasant Encounters',
-    expand: 'My barista and I reconnected today after a long time'
+    type: 'Pleasant Encounters',
+    description: 'My barista and I reconnected today after a long time'
   },
   {
-    create: 'Nature refresh',
-    expand: 'I sat at the foot of a tree today and listened'
+    type: 'Nature refresh',
+    description: 'I sat at the foot of a tree today and listened'
   },
   {
-    create: 'Self-care',
-    expand: 'I took time out of a busy day to eat'
+    type: 'Self-care',
+    description: 'I took time out of a busy day to eat'
   },
   {
-    create: 'Gratitude',
-    expand: 'Today, I am deeply grateful for the air I breathe, the body I inhabit, and the people who share my life journey'
+    type: 'Gratitude',
+    description: 'Today, I am deeply grateful for the air I breathe, the body I inhabit, and the people who share my life journey'
   }
 ]
 

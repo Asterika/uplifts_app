@@ -130,18 +130,18 @@ app.post('/uplifts', (req, res) => {
 
 //step 7 - create a SHOW ROUTE
 app.get('/uplifts/:id', (req, res) => {
-  res.render('show.ejs',
-  {
-    uplifts: uplifts[req.params.id]
+//   res.render('show.ejs',
+//   {
+//     uplifts: uplifts[req.params.id]
+//   });
+// });
+  Uplift.findById(req.params.id, (error, foundUplift) => {
+    res.render('show.ejs',
+    {
+      uplift: foundUplift
+    });
   });
 });
-  // Uplift.findById(req.params.id, (error, foundUplift) => {
-  //   res.render('show.ejs',
-  //   {
-  //     uplift: foundUplift
-  //   });
-  // });
-// });
 
 
 //step 5 - create a PUT ROUTE to update objects found by id
