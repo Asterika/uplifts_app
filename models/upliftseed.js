@@ -5,7 +5,7 @@ const uplifts = [
   {
     type: 'Adventured',
     img: '/images/adventured - unknown.jpg',
-    description: 'Today, I stepped foot outside my door, not knowing where the path would take me'
+    description: 'Today, I stepped outside my door, not knowing where the path would go...'
   },
   {
     type: 'Honored',

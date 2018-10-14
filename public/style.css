@@ -1,30 +1,110 @@
+a {
+  color: lightseagreen;
+  /* color: mediumaquamarine; */
+  font-weight: bold;
+}
+
+a:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
 body {
   background-color: ghostwhite;
 }
 
-.container {
-  width: 800px;
-  margin: auto;
-  margin-top: 30px;
-  /* text-align: center; */
+.container-fluid {
+  margin: 0 60px 0 40px;
 }
 
-.container-uplifts {
+h1 {
+  color: dodgerblue;
+}
+
+h4 {
+  margin-left: 520px;
+}
+
+.jumbotron {
+  height: 180px;
+  margin: 0px 60px 20px -20px;
+  padding: 30px;
+  /* text-align: center */
+}
+
+.row {
+  margin: auto;
+  margin-left: 25px;
+  padding-top: 10px;
+}
+
+.col-sm-4 {
+  padding-right: 130px;
+  text-align: justify;
+}
+/* .no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+} */
+
+/* .main { */
+  /* align-items: center;
   align-content: space-around;
+  border: 2px solid blue; */
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* height: 900px; */
+  /* justify-content: flex-start; */
+  /* margin: 0 auto;
+  margin-top: 30px; */
+  /* width: 1200px; */
+/* } */
+
+/* .container-uplift {
+  align-self: center;
+  border: 2px solid lime; */
+  /* float: left; */
+  /* display: inline; */
+  /* display: flex;
+  flex-flow: column wrap;
+  height: 450px; */
+  /* justify-content: flex-start;
+  margin: 0 auto; */
+  /* width: 250px; */
+  /* align-content: space-around;
+  border: 2px solid lime;
   display: flex;
+  flex-direction: row;
   flex-flow: row wrap;
+  height: 450px;
   justify-content: space-evenly;
   padding: 4px 40px 40px 42px;
   margin: 0 auto;
-}
+  width: 350px; */
+/* } */
 
-img {
-  height: 300px;
-  width: 400px;
-}
+/* img {
+  border: 2px solid purple;
+  height: 150px;
+  object-fit: contain;
+  width: 650px;
+} */
 
 .img-uplift {
   align-self: center;
+  /* background-color: rgb(233,236,239); */
+  /* border: 1px inset dodgerblue; */
+  /* display: inline; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: row wrap;
+  height: 200px;
+  object-fit: contain;
+  width: 300px;
+}
+
+.main {
+  margin-left: 470px;
 }
 
 /* main nav class li right items need to float right in the navbar */
@@ -38,7 +118,20 @@ img {
 
 .right {
   font-size: 20px;
-  margin: 6px 15px;
+  margin: 6px 0px 0px 35px;
+}
+
+.textbox {
+  border: 1px solid lightseagreen;
+  width: 220px;
+  height: 75px;
+  /* resize: none; */
+  /* max-width: 440px;
+  max-height: 150px; */
+}
+
+.title-uplift {
+
 }
 
 /* to float navbar logo to the left */
@@ -46,3 +139,75 @@ img {
   margin-left: 30px;
   margin-right: auto;
 }
+
+/* -----------------------------
+          MODALS
+----------------------------- */
+/* #modal {
+  background-color: rgba(0,0,0,0.4);
+  display: none;
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.loss {
+  background-image: url('../images/systemfailure.jpeg');
+  border: 3px solid lime;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+  height: 600px;
+  justify-content: center;
+  margin: 50px auto;
+  object-fit: fill;
+  padding: 2%;
+  width: 1110px;
+}
+
+.red-pill, .blue-pill {
+  border-radius: 60px;
+  color: white;
+  cursor: pointer;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  height: 120px;
+  margin-top: 320px;
+  margin-left: 200px;
+  position: relative;
+  text-shadow: 4px 4px black;
+  width: 240px;
+}
+
+/* remove Chrome default blue box border around buttons
+courtesy StackOverflow */
+/* button:focus {outline:0};
+
+.red-pill:active, .blue-pill:active {
+  border: none;
+  box-shadow: 0 5px white;
+  outline: none;
+  transform: translateY(6px);
+}
+
+.red-pill:hover {
+  background-color: limegreen;
+}
+
+.red-pill {
+  background-color: red;
+  margin-left: 180px;
+}
+
+.blue-pill:hover {
+  background-color: limegreen;
+}
+
+.blue-pill {
+  background-color: blue;
+  margin-left: 280px; */
+/* } */

@@ -13,9 +13,11 @@
         <li class="right"><a href="/">LOGOUT</a></li>
       <ul>
     </div>
-    <div class="container">
-      <h1>reLIFT</h1>
-        <h2>Edit your upLIFT</h2>
+    <div class="container-fluid">
+      <section class="jumbotron">
+        <h1>reLIFT</h1><br />
+        <h3>Edit your upLIFT</h3><br /><br />
+      </section>
         <!-- keep getting error - cannot PUT /uplifts/gallery - makes sense, need to add uplift.id once uplifts are added -->
           <form action="/uplifts?_method=PUT" method="POST">
             Edit your upLIFT: <input type="text" name="type"/><br /><br />

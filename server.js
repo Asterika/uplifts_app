@@ -9,7 +9,7 @@ const db = mongoose.connection;
 //step 4b - require the uplifts model to draw the variable Uplift
 const Uplift = require('./models/uplifts.js');
 //require seed data using a variable
-const uplifts = require('./models/seed.js');
+const uplifts = require('./models/upliftseed.js');
 
 //======================
 //        PORT
@@ -117,6 +117,7 @@ app.get('/uplifts/', (req, res) => {
     //   uplifts: allUplifts
     // });
   });
+  // res.redirect('/uplifts/:id')
 });
 
 //step 3 - create a CREATE ROUTE to send(post) data from new page to gallery
@@ -135,11 +136,17 @@ app.get('/uplifts/:id', (req, res) => {
 //     uplifts: uplifts[req.params.id]
 //   });
 // });
-  Uplift.findById(req.params.id, (error, foundUplift) => {
-    res.render('show.ejs',
-    {
-      uplift: foundUplift
-    });
+//   Uplift.findById(req.params.id, (error, foundUplift) => {
+//     res.render('show.ejs',
+//     {
+//       uplift: foundUplift
+//     });
+//   });
+// });
+  res.render('show.ejs',
+  {
+    uplift: uplifts[req.params.id],
+    index: [req.params.id]
   });
 });
 
@@ -147,10 +154,10 @@ app.get('/uplifts/:id', (req, res) => {
 //step 5 - create a PUT ROUTE to update objects found by id
 //need to add uplift.id once seed data is added
 app.put('/uplifts/:id', (req, res) => {
-  Uplift.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel) => {
-    res.redirect('/uplifts');
+  // Uplift.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel) => {
+  uplifts[req.params.id] = req.body;
+    res.redirect('/uplifts/' + req.params.id);
   });
-});
 
 //step 6 - create DELETE ROUTE
 app.delete('/uplifts/:id', (req, res) => {

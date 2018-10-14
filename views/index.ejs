@@ -13,19 +13,40 @@
         <li class="right"><a href="/">LOGOUT</a></li>
       <ul>
     </div>
-    <div class="container">
-      <h1>Welcome!</h1>
-        <p>This is the Gallery Page</p>
-        <div class="container-uplifts">
-          <ul>
+    <!-- <div class="main"> -->
+    <div class="container-fluid">
+      <section class="jumbotron">
+        <h1>Welcome!</h1><br />
+        <h3>upLIFT Yourself</h3><br /><br />
+      </section>
+        <h4>Today, I...</h4><br />
+        <div class="row">
+        <!-- <div class="container-uplifts"> -->
             <% for(let i = 0; i < uplifts.length; i++) { %>
-              <li>
-                <%=uplifts[i].type%><br />
-                <img class="img-uplift" src="<%=uplifts[i].img%>"><br />
-                <%=uplifts[i].description%>
-              </li>
+                <!-- Today, I <%#=uplifts[i].type%><br /> -->
+                <!-- <div class="container-uplift"> -->
+                <!-- can use col-4 here as well -->
+                <!-- can also use: <div class="w-100"></div> for breakpoint to next row of paragraphs if columns are to be equal width -->
+                <p class="col-sm-4">
+                <%=uplifts[i].type%>
+                <a href="/uplifts/:id/<%=i%>">
+                  <img class="img-uplift" src="<%=uplifts[i].img%>"></a><br />
+                <%=uplifts[i].description%><br /><br />
+                <!-- <button id="openModal" type="button" class="btn btn-outline-primary">Open</button>
+                <button id="openModal" type="button" class="btn btn-outline-info">Open</button><br />
+                <button id="openModal" type="button" class="btn btn-outline-primary btn-lg btn-block">Open</button><br />
+                <button id="openModal" type="button" class="btn btn-outline-info btn-lg btn-block">Open</button><br />
+                <button type="button" class="btn btn-primary">Open</button>
+                <button type="button" class="btn btn-info">Open</button><br /><br /> -->
+
+
+                <a class="btn btn-info btn-lg btn-block" href="/uplifts/:id" role="button">Open</a>
+                <!-- open button needs to connect to show page -->
+                <!-- <button type="button" class="btn btn-info btn-lg btn-block btn-link" href="/uplifts/:id/<%#=i%>">Open</button> -->
+                <!-- <div id="modal">
+                </div> -->
+                <!-- <button type="button" class="btn btn-outline-primary">Primary</button> -->
             <% } %>
-          </ul>
         </div>
     </div>
   </body>
