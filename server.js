@@ -9,7 +9,7 @@ const db = mongoose.connection;
 //step 4b - require the uplifts model to draw the variable Uplift
 const Uplift = require('./models/uplifts.js');
 //require seed data using a variable
-const uplifts = require('./models/upliftseed.js');
+const uplifts = require('./models/seed.js');
 
 //======================
 //        PORT
@@ -21,7 +21,7 @@ const PORT =  process.env.PORT || 3000;
 //      DATABASE
 //======================
 //how to connect to db either via Heroku or locally
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/' + 'uplifts';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/' + 'uplifts';
 
 //connect to Mongo
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
@@ -58,32 +58,16 @@ app.use(express.json());
 //use method override -> allows POST, PUT, and DELETE from a form
 app.use(methodOverride('_method'));
 
+
+
 //seed route
-// app.get('/seed', (req, res) => {
-//   Uplift.create(
-//     [
-//       {
-//         "create": "Pleasant Encounters",
-//         "expand": "My barista and I reconnected today after a long time"
-//       },
-//       {
-//         "create": "Nature refresh",
-//         "expand": "I sat at the foot of a tree today and listened"
-//       },
-//       {
-//         "create": "Self-care",
-//         "expand": "I took time out of a busy day to eat"
-//       },
-//       {
-//         "create": "Gratitude",
-//         "expand": "Today, I am deeply grateful for the air I breathe, the body I inhabit, and the people who share my life journey"
-//       }
-//     ]
-//     (err, data) => {
-//       res.redirect('/uplifts');
-//   }
-// )
-// });
+app.get('/uplifts/seed', (req, res) => {
+  Uplift.create(uplifts,
+    (err, data) => {
+      res.redirect('/uplifts');
+  }
+)
+});
 
 //======================
 //       ROUTES
@@ -103,69 +87,67 @@ app.get('/', (req, res) => {
   // });
 // });
 
+// step 2 - create an INDEX ROUTE that will render created uplifts
+app.get('/uplifts', (req, res) => {
+  // THIS IS HOW TO CREATE THE SHOW PAGE
+  Uplift.find({}, (error, allUplifts) => {
+    res.render('index.ejs', {
+      uplifts: allUplifts
+    });
+  });
+});
+
+
+//step 3 - create a CREATE ROUTE to send(post) data from new page to gallery
+app.post('/uplifts', (req, res) => {
+    // need a way to send info from form (req.body) of new page to the gallery
+    //2 LINES OF CODE BELOW THIS WORK!!!
+    uplifts.push(req.body);
+    res.redirect('/uplifts');
+    //THESE 3 LINES OF CODE DO NOT WORK:
+    // Uplift.create(req.body, (err, createdUplift) => {
+    //   res.redirect('/uplifts');
+    // });
+});
+
+
 //step 1 - create a NEW ROUTE that will enable to create a new uplift
 app.get('/new', (req, res) => {
   // res.send('new');
   res.render('new.ejs');
-})
-
-// step 2 - create an INDEX ROUTE that will render created uplifts
-app.get('/uplifts/', (req, res) => {
-  // Uplift.find({}, (error, allUplifts) => {
-    res.render('index.ejs', {
-      uplifts: uplifts
-    //   uplifts: allUplifts
-    // });
-  });
-  // res.redirect('/uplifts/:id')
 });
 
-//step 3 - create a CREATE ROUTE to send(post) data from new page to gallery
-app.post('/uplifts', (req, res) => {
-  // res.render('index.ejs', {
-    // need a way to send info from form (req.body) of new page to the gallery
-    uplifts.push(req.body);
-    res.redirect('/uplifts');
-});
-// })
 
 //step 7 - create a SHOW ROUTE
 app.get('/uplifts/:id', (req, res) => {
 //   res.render('show.ejs',
 //   {
-//     uplifts: uplifts[req.params.id]
+    // uplifts: uplifts[req.params.id]
 //   });
 // });
-//   Uplift.findById(req.params.id, (error, foundUplift) => {
-//     res.render('show.ejs',
-//     {
-//       uplift: foundUplift
-//     });
-//   });
-// });
-  res.render('show.ejs',
-  {
-    uplift: uplifts[req.params.id],
-    index: [req.params.id]
+  Uplift.findById(req.params.id, (err, foundUplift) => {
+    res.render('show.ejs',
+    {
+      uplift: foundUplift
+    });
   });
 });
+//   res.render('show.ejs',
+//   {
+//     uplift: uplifts[req.params.id],
+//     index: [req.params.id]
+//   });
+// });
 
-
-//step 5 - create a PUT ROUTE to update objects found by id
-//need to add uplift.id once seed data is added
-app.put('/uplifts/:id', (req, res) => {
-  // Uplift.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel) => {
-  uplifts[req.params.id] = req.body;
-    res.redirect('/uplifts/' + req.params.id);
-  });
 
 //step 6 - create DELETE ROUTE
 app.delete('/uplifts/:id', (req, res) => {
   // res.send('deleting');
   Uplift.findByIdAndRemove(req.params.id, (err, data) => {
     res.redirect('/uplifts');
-  })
-})
+  });
+});
+
 
 //step 4 - create an edit route to allow users to edit their uplifts
 app.get('/uplifts/:id/edit', (req, res) => {
@@ -180,6 +162,21 @@ app.get('/uplifts/:id/edit', (req, res) => {
     );
   });
 });
+
+
+//step 5 - create a PUT ROUTE to update objects found by id
+//need to add uplift.id once seed data is added
+app.put('/:id', (req, res) => {
+  Uplift.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedUplift) => {
+    res.redirect('/uplifts');
+  // uplifts[req.params.id] = req.body;
+  // uplift[req.params.id] = req.body;
+    // res.render('show.ejs', {
+      // uplift: updatedUplifts
+  });
+});
+// res.redirect('/uplifts/' + req.params.id);
+
 
 //======================
 //      LISTENER

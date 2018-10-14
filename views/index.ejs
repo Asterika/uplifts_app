@@ -29,9 +29,10 @@
                 <!-- can also use: <div class="w-100"></div> for breakpoint to next row of paragraphs if columns are to be equal width -->
                 <p class="col-sm-4">
                 <%=uplifts[i].type%>
-                <a href="/uplifts/:id/<%=i%>">
-                  <img class="img-uplift" src="<%=uplifts[i].img%>"></a><br />
+                <a href="/uplifts/<%=uplifts[i].id;%>">
+                  <img class="img-uplift" src="<%=uplifts[i].img;%>"></a><br />
                 <%=uplifts[i].description%><br /><br />
+                <!-- <%#=Object.keys(uplifts[i])%><br /><br /> -->
                 <!-- <button id="openModal" type="button" class="btn btn-outline-primary">Open</button>
                 <button id="openModal" type="button" class="btn btn-outline-info">Open</button><br />
                 <button id="openModal" type="button" class="btn btn-outline-primary btn-lg btn-block">Open</button><br />
@@ -40,7 +41,7 @@
                 <button type="button" class="btn btn-info">Open</button><br /><br /> -->
 
 
-                <a class="btn btn-info btn-lg btn-block" href="/uplifts/:id" role="button">Open</a>
+                <a class="btn btn-info btn-lg btn-block" href="/uplifts/<%=uplifts[i].id;%>" role="button">Open</a>
                 <!-- open button needs to connect to show page -->
                 <!-- <button type="button" class="btn btn-info btn-lg btn-block btn-link" href="/uplifts/:id/<%#=i%>">Open</button> -->
                 <!-- <div id="modal">

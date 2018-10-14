@@ -16,10 +16,28 @@
     <div class="container-fluid">
       <section class="jumbotron">
         <h1>upLIFT</h1><br />
-        <h3>upLIFT Show Page</h3><br /><br />
+        <h3>upLIFT Yourself</h3><br /><br />
+        <h4>Today, I...</h4>
         <div class="main">
-          <!-- Today, I <%#=uplifts.type; %><br />
-          <img src="<%#uplifts.img%>"><br /> -->
+            <p class="col-sm-4">
+              <!-- type -->
+              <div class="heading-uplift">
+                <%= uplift.type %><br /><br />
+              </div>
+              <!-- image -->
+              <img class="img-uplift" src="<%= uplift.img %>"><br /><br />
+              <!-- description -->
+              <div class="description-uplift">
+                <%= uplift.description %>
+              </div>
+
+              <a href="/uplifts/<%=uplift.id;%>/edit" class="btn btn-link">EDIT</a>
+              <form action="/uplifts/<%=uplift.id;%>?_method=DELETE" method="POST">
+                <input type="submit" value="DELETE" class="btn btn-link">
+              </form>
+
+
+
         </div>
       </section>
     </div>

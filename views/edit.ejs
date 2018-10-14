@@ -19,13 +19,14 @@
         <h3>Edit your upLIFT</h3><br /><br />
       </section>
         <!-- keep getting error - cannot PUT /uplifts/gallery - makes sense, need to add uplift.id once uplifts are added -->
-          <form action="/uplifts?_method=PUT" method="POST">
-            Edit your upLIFT: <input type="text" name="type"/><br /><br />
-            Edit your expand: <input type="textarea" name="description" /><br /><br />
-            Edit your image: <input type="image" name="image" /><br /><br />
+          <form action="/uplifts/<%=uplift.id%>?_method=PUT" method="POST">
+            <!-- NEED TO INSERT A DROPDOWN MENU -->
+            Edit upLIFT type: <input type="text" name="type" value="<%=uplift.type%>"/><br /><br />
+            Edit your expand: <input type="textarea" name="description" value="<%=uplift.description%>"/><br /><br />
+            <!-- Edit your image: <input type="image" name="image" /><br /><br /> -->
           <!-- submit button -->
           <!-- <form action="/gallery" method="POST"> -->
-            <input type="submit" value="Edit &nbsp;upLIFT" class="btn btn-outline-info"/>
+            <input type="submit" value="Edit upLIFT" class="btn btn-info"/>
           </form>
           <!-- <form action="/session?_method=DELETE" method="POST">
             <input type="submit" value="Logout" class="waves-effect waves-light btn"/>
