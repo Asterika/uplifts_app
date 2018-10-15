@@ -3,9 +3,14 @@ const mongoose = require('mongoose');
 //create new schema
 const upliftSchema = new mongoose.Schema(
   {
+  //assign each uplift a designated type
   type: String,
+  //assign each image a value field in order to match img-value with the object-value from the dropdown menu
+  img: {
+    image: String,
+    value: String
+  },
   description: String,
-  img: String
 },
   ({ timestamps: true }));
 

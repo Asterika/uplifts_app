@@ -22,22 +22,20 @@
             <p class="col-sm-4">
               <!-- type -->
               <div class="heading-uplift">
-                <%= uplift.type %><br /><br />
+                <%=uplift.type%><br /><br />
               </div>
               <!-- image -->
               <img class="img-uplift" src="<%= uplift.img %>"><br /><br />
               <!-- description -->
               <div class="description-uplift">
-                <%= uplift.description %>
+                <%=uplift.description%>
               </div>
 
-              <a href="/uplifts/<%=uplift.id;%>/edit" class="btn btn-link">EDIT</a>
+              <!-- <a href="/uplifts/<%#=uplift.id;%>/edit" class="btn btn-link">EDIT</a> -->
               <form action="/uplifts/<%=uplift.id;%>?_method=DELETE" method="POST">
+                <a href="/uplifts/<%=uplift.id;%>/edit" class="btn btn-link">EDIT</a>
                 <input type="submit" value="DELETE" class="btn btn-link">
               </form>
-
-
-
         </div>
       </section>
     </div>

@@ -1,6 +1,14 @@
 a {
-  color: lightseagreen;
+  color: #00cad3;
+  /* color: tomato; */
+  /* TOP: pink, orange, turquoise */
+  /* color: #FF1493; */
   /* color: mediumaquamarine; */
+  /* color: lightseagreen; */
+  /* color: mediumaquamarine; */
+  /* color: #FF4500; */
+  /* color: darkturquoise; */
+  /* color: turquoise; */
   font-weight: bold;
 }
 
@@ -12,6 +20,14 @@ a:hover {
 body {
   background-color: ghostwhite;
 }
+/*
+CHANGE .BTN CLASSES
+.btn.outline {
+  background: none;
+  padding: 12px 22px;
+  border: 2px solid #00cad3;
+  color: #00cad3;
+} */
 
 /* fluid container for responsive resizing */
 .container-fluid {
@@ -25,10 +41,23 @@ body {
 }
 
 h1 {
+  /* color: dodgerblue; */
+  color: mediumblue;
+  /* color: mediumaquamarine; */
+  font-weight: bold;
+}
+
+h3 {
+  /* color: mediumblue; */
+  /* color: darkturquoise; */
   color: dodgerblue;
 }
 
 h4 {
+  /* color: mediumblue; */
+  color: mediumblue;
+  font-style: italic;
+  font-weight: bold;
   margin-left: 520px;
   /* text-align: center; */
 }
@@ -103,8 +132,11 @@ h4 {
 
 /* controls the heading of each individual uplift */
 .heading-uplift {
-  color: lightseagreen;
+  color: dodgerblue;
+  font-size: 22px;
   font-weight: bold;
+  margin-bottom: -10px;
+  margin-top: 20px;
 }
 
 /* specs for the image of all uplifts */
@@ -143,9 +175,9 @@ pushes nav links (Gallery, Create, & Logout) to the right */
 }
 
 .textbox {
-  border: 1px solid lightseagreen;
-  width: 220px;
-  height: 75px;
+  border: 1.5px solid #00cad3;
+  width: 440px;
+  height: 150px;
   /* resize: none; */
   /* max-width: 440px;
   max-height: 150px; */
@@ -163,12 +195,16 @@ pushes nav links (Gallery, Create, & Logout) to the right */
 
 #typeDropDown {
   background-color: dodgerblue;
+  /* background-color: #00cad3; */
+  border: 2px solid dodgerblue;
   color: white;
-  border: 1px solid grey;
+  cursor: pointer;
   font-family: "Helvetica Neue", Helvetica;
   font-size: 20px;
   font-weight: bold;
-  height: 45px;
+  height: 40px;
+  margin-top: 10px;
+  opacity: 0.85;
   width: 200px;
 }
 
