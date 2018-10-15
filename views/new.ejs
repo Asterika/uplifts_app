@@ -9,7 +9,7 @@
       <!-- <% include ./partials/nav.ejs %> -->
       <ul class="main-nav">
         <li class="left"><button type="button" class="btn btn-outline-info">LOGO GOES HERE</button>
-        <li class="right"><a href="/uplifts/">GALLERY</a></li>
+        <li class="right"><a href="/uplifts/gallery">GALLERY</a></li>
         <li class="right"><a href="/">LOGOUT</a></li>
       <ul>
     </div>
@@ -21,7 +21,7 @@
       <!-- <h4>Today, I...</h4> -->
       <!-- Today, I... -->
         <div class="main">
-          <form action="/uplifts" method="POST">
+          <form action="/uplifts/gallery" method="POST">
             <div class="dropdown">
               <!-- <p style="font-size:26px;">Today, I...<br /> -->
                 <select name="typeName" id="typeDropDown">
@@ -43,11 +43,11 @@
             </div>
           <br />
           <p style="font-size:26px;">Add a Visual:</p>
-          <%# for(let i = 0; i < uplifts.length; i++) { %>
+          <!-- <%# for(let i = 0; i < uplifts.length; i++) { %>
             if(uplifts.img.value === option.value) {
               <img>
             }
-          }
+          } -->
 
 
           <p style="font-size:26px;">Expand:</p>

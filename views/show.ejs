@@ -9,7 +9,7 @@
       <!-- <% include ./partials/nav.ejs %> -->
       <ul class="main-nav">
         <li class="left"><button type="button" class="btn btn-outline-info">LOGO GOES HERE</button>
-        <li class="right"><a href="/uplifts">GALLERY</a></li>
+        <li class="right"><a href="/uplifts/gallery">GALLERY</a></li>
         <li class="right"><a href="/">LOGOUT</a></li>
       <ul>
     </div>
@@ -32,8 +32,8 @@
               </div>
 
               <!-- <a href="/uplifts/<%#=uplift.id;%>/edit" class="btn btn-link">EDIT</a> -->
-              <form action="/uplifts/<%=uplift.id;%>?_method=DELETE" method="POST">
-                <a href="/uplifts/<%=uplift.id;%>/edit" class="btn btn-link">EDIT</a>
+              <form action="/uplifts/gallery/<%=uplift.id;%>?_method=DELETE" method="POST">
+                <a href="/uplifts/gallery/<%=uplift.id;%>/edit" class="btn btn-link">EDIT</a>
                 <input type="submit" value="DELETE" class="btn btn-link">
               </form>
         </div>

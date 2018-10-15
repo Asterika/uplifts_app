@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <% include ./partials/head.ejs %>
+    <title></title>
+  </head>
+  <body>
+    <div>
+      <!-- <% include ./partials/nav.ejs %> -->
+      <ul class="main-nav">
+        <li class="left"><button type="button" class="btn btn-outline-info">LOGO GOES HERE</button>
+        <li class="right"><a href="/uplifts/">GALLERY</a></li>
+        <li class="right"><a href="/">LOGOUT</a></li>
+      <ul>
+    </div>
+    <div class="container-fluid">
+      <section class="jumbotron">
+        <h1>upLIFT</h1><br />
+        <h3>Create Your upLIFT</h3><br /><br />
+      </section>
+
+      <div class="main">
+        <form action="/uplifts" method="POST">
+
+          <p style="font-size:26px;">Expand:</p>
+            <input class="textbox" type="textarea" name="description" /><br /><br />
+            <!-- Select an image: <input type="image" name="image" /><br /><br /> -->
+          <!-- submit button -->
+          <!-- <form action="/gallery" method="POST"> -->
+            <input type="submit" value="Create upLIFT" class="btn btn-outline-info"/>
+          </form>
+        </div>
+    </div>
+  </body>
+</html>

@@ -9,7 +9,7 @@
       <!-- <% include ./partials/nav.ejs %> -->
       <ul class="main-nav">
         <li class="left"><button type="button" class="btn btn-outline-info">LOGO GOES HERE</button>
-        <li class="right"><a href="/uplifts">GALLERY</a></li>
+        <li class="right"><a href="/uplifts/gallery">GALLERY</a></li>
         <li class="right"><a href="/">LOGOUT</a></li>
       <ul>
     </div>
@@ -19,7 +19,7 @@
         <h3>Edit your upLIFT</h3><br /><br />
       </section>
         <!-- keep getting error - cannot PUT /uplifts/gallery - makes sense, need to add uplift.id once uplifts are added -->
-          <form action="/uplifts/<%=uplift.id%>?_method=PUT" method="POST">
+          <form action="/uplifts/gallery<%=uplift.id%>?_method=PUT" method="POST">
             <!-- NEED TO INSERT A DROPDOWN MENU -->
             Edit upLIFT type: <input type="text" name="type" value="<%=uplift.type%>"/><br /><br />
             Edit your expand: <input type="textarea" name="description" value="<%=uplift.description%>"/><br /><br />
