@@ -20,10 +20,11 @@
       </section>
         <div class="main">
           <form action="/uplifts" method="POST">
-            <!-- include this div class in section class instead vs id? -->
-            <div class="dropdown"/>
-            Today I...
-              <select name="typeName" id="typeDropDown"/>
+            <div class="dropdown">
+              Today, I...<br />
+              <!-- <div class="custom-select" style="width:200px;"> -->
+              <select name="typeName" id="typeDropDown">
+              <!-- <select> -->
                 <option value="adventured">Adventured</option>
                 <option value="celebrated">Celebrated</option>
                 <option value="connected">Connected</option>
@@ -39,6 +40,7 @@
                 <option value="stretched">Stretched</option>
               </select><br /><br />
             </div>
+            </div><br />
             Expand:<br />
             <input class="textbox" type="textarea" name="description" /><br /><br />
             <!-- Select an image: <input type="image" name="image" /><br /><br /> -->
@@ -52,7 +54,7 @@
             <!-- <button type="button" class="btn btn-outline-info">
             <input type="submit" value="Create upLIFT"/>
           </form> -->
-        </div>  
+        </div>
     </div>
   </body>
 </html>

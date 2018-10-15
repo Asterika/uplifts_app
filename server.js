@@ -166,7 +166,7 @@ app.get('/uplifts/:id/edit', (req, res) => {
 
 //step 5 - create a PUT ROUTE to update objects found by id
 //need to add uplift.id once seed data is added
-app.put('/:id', (req, res) => {
+app.put('/uplifts/:id', (req, res) => {
   Uplift.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedUplift) => {
     res.redirect('/uplifts');
   // uplifts[req.params.id] = req.body;
