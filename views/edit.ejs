@@ -25,7 +25,7 @@
             <div>
               <h1 class="login-header">Edit Your upLIFT</h1><br />
                 <div class="uplift-box">
-                  <form action="/uplifts/gallery<%=uplift.id%>?_method=PUT" method="POST">
+                  <form action="/uplifts/<%=uplift.id%>?_method=PUT" method="POST">
                     <div class="dropdown">
                         <select name="typeName" id="typeDropDown">
                           <option value="empty">Today, I...</option>
