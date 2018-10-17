@@ -12,7 +12,8 @@ module.exports = router;
 //ROUTES
 // localhost:3000 -> will reroute to 'products'
 router.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.render('home.ejs');
+  // res.send('Hello World!');
 });
 
 // step 2 - create an INDEX ROUTE that will render created uplifts
@@ -20,7 +21,8 @@ router.get('/gallery', (req, res) => {
   // THIS IS HOW TO CREATE THE SHOW PAGE
   Uplift.find({}, (error, allUplifts) => {
     res.render('index.ejs', {
-      uplifts: allUplifts
+      uplifts: allUplifts,
+      currentUser: req.session.currentUser
     });
   });
 });

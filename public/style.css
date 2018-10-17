@@ -1,5 +1,10 @@
+:root {
+  --bright-blue: #00cad3;
+  --deep-blue: #2C60A6;
+}
+
 a {
-  color: #00cad3;
+  color: var(--bright-blue);
   /* color: tomato; */
   /* TOP: pink, orange, turquoise */
   /* color: #FF1493; */
@@ -41,8 +46,8 @@ CHANGE .BTN CLASSES
 }
 
 h1 {
-  /* color: dodgerblue; */
-  color: mediumblue;
+  color: var(--deep-blue);
+  /* color: mediumblue; */
   /* color: mediumaquamarine; */
   font-weight: bold;
 }
@@ -50,7 +55,7 @@ h1 {
 h3 {
   /* color: mediumblue; */
   /* color: darkturquoise; */
-  color: dodgerblue;
+  color: var(--deep-blue);
 }
 
 h4 {
@@ -69,6 +74,117 @@ h4 {
   padding: 30px;
   /* text-align: center */
 }
+
+/* drawn from GA WDIR-Speculoos w06d02 morning exercise - registration form */
+.container-login {
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #bbb,
+              -2px -2px 10px #bbb;
+  display: flex;
+  align-content: flex-end;
+  /* flex-wrap: row wrap; */
+  height: 70vw;
+  margin: 50px auto;
+  width: 80vw;
+}
+
+.nested-container {
+  display: block;
+  border: 2px solid aqua;
+  height: 40vw;
+  margin-top: 400px;
+  width: 40vw;
+}
+
+.img-fluid {
+  height: auto;
+  max-width: 42%;
+  /* width: 100%; */
+}
+
+.login-header {
+  /* box-shadow: 1px 1px 1px 1px aqua; */
+  color: var(--deep-blue);
+  font-weight: bold;
+  margin-top: 56px;
+  margin-left: 45px;
+  position: relative;
+  /* text-shadow: 2px 2px 4px aqua; */
+}
+
+.login-box {
+  border: 2px solid lightgrey;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px #bbb,
+              -1px -1px 10px #bbb;
+  height: 40vw;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-left: 40px;
+  padding-top: 15px;
+  /* margin: 60px 45px 50px -20px; */
+  width: 40vw;
+}
+
+.new-user-box {
+  border: 2px solid lightgrey;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px #bbb,
+              -1px -1px 10px #bbb;
+  height: 40vw;
+  margin: auto;
+  margin-left: 40px;
+  padding-top: 15px;
+  width: 40vw;
+}
+
+.login {
+  color: var(--bright-blue);
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 36px;
+  padding-left: 50px;
+}
+
+.btn-login {
+  background-color: var(--bright-blue);
+  border: none;
+  border-radius: 4px;
+  box-shadow: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 15px;
+  padding: 8px;
+}
+
+
+input {
+  border: 1.5px inset dodgerblue;
+  box-shadow: 1px 1px 5px dodgerblue,
+             -1px -1px 5px dodgerblue;
+  cursor: text;
+  margin-bottom: 15px;
+}
+
+/*
+/* .login {
+  margin-top: 250px;
+} */
+  /* float: right; */
+  /* margin: 110px -103.5%; */
+  /* width: 50%; */
+  /* border: 2px solid aqua;
+  height: 480px;
+  width: 400px;
+}
+/* .login-form {
+  overflow: hidden;
+  float: right;
+  margin: 0 -100px;
+  border: 1px solid aqua;
+  height: 70vw;
+} */
 
 /* holds uplifts themselves - title, image, description */
 .row {

@@ -4,6 +4,7 @@
 //======================
 const express = require('express');
 const app = express();
+const session = require('express-session');
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const db = mongoose.connection;
@@ -11,6 +12,13 @@ const db = mongoose.connection;
 const Uplift = require('./models/uplifts.js');
 //require seed data using a variable
 const uplifts = require('./models/seed.js');
+//require users controller
+const usersController = require('./controllers/users.js');
+//require sessions controller
+const sessionsController = require('./controllers/sessions.js');
+//require the controllers uplifts
+const upliftsController = require('./controllers/uplifts.js');
+
 
 //======================
 //        PORT
@@ -61,15 +69,31 @@ app.use(express.urlencoded({ extended:false }));
 //returns middleware that only parses JSOn
 app.use(express.json());
 
+app.use(session({
+  secret: "magicalunicorns",
+  resave: false,
+  saveUnitialized: false
+}));
+
 //use method override -> allows POST, PUT, and DELETE from a form
 app.use(methodOverride('_method'));
 
-//require the controllers uplifts
-const upliftsController = require('./controllers/uplifts.js');
+//tell server.js to use this controllers file as middleware for users
+app.use('/users', usersController);
+
+//tell server.js to use this controller as file as middleware for sessions
+app.use('/sessions', sessionsController);
 
 //tell server.js to use this controllers file as middleware
 app.use('/uplifts', upliftsController);
 
+//WELCOME ROUTE for logged in users
+app.get('/', (req, res) => {
+  //NOT SURE IF INDEX OR HOME NEEDS TO BE RENDERED HERE
+  res.render('index.ejs', {
+    currentUser: req.session.currentUser
+  });
+});
 
 
 //======================

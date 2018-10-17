@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <% include ../partials/head.ejs %>
+    <title></title>
+  </head>
+  <body>
+    <div class="container-login">
+      <img src="/images/login/palmtrees.jpg" class="img-fluid">
+      <div>
+        <h1 class="login-header">Log In</h1><br />
+        <div class="login-box">
+          <form class="login" action="/sessions" method="POST">
+            <label for="username">Username</label><br />
+            <input type="text" name="username"><br /><br />
+            <label for="password" name="password">Password</label><br />
+            <input type="password" name="password"><br />
+            <input type="submit" value="upLIFT" class="btn-login">
+        </div>
+      </div>
+          <!-- <div class="nested-container">
+          </div> -->
+
+
+  </div>
+  </body>
+</html>
