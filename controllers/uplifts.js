@@ -6,6 +6,7 @@ const express = require('express');
 const router = express.Router();
 const Uplift = require('../models/uplifts.js');
 const User = require('../models/users.js');
+const upliftSeed = require('../models/seed.js');
 
 //export this module for later use
 module.exports = router;
@@ -30,8 +31,7 @@ router.get('/gallery', (req, res) => {
 
 //seed route
 router.get('/seed', (req, res) => {
-  Uplift.create(uplifts,
-    (err, data) => {
+  Uplift.create(upliftSeed, (err, data) => {
       res.redirect('/uplifts/gallery');
   }
 );
