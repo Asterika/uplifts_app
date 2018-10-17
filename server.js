@@ -72,7 +72,7 @@ app.use(express.json());
 app.use(session({
   secret: "magicalunicorns",
   resave: false,
-  saveUnitialized: false
+  saveUninitialized: false
 }));
 
 //use method override -> allows POST, PUT, and DELETE from a form
