@@ -6,38 +6,105 @@
   </head>
   <body>
     <div>
+      <div>
+        <!-- <% include ./partials/nav.ejs %> -->
+        <ul class="main-nav">
+          <li class="left"><a href="/uplifts"><img src="/images/logo/uplift_logo.png" style="background-color:ghostwhite"></a></li>
+          <li class="right"><a href="/uplifts/gallery">GALLERY</a></li>
+          <li class="right"><a href="/uplifts">LOGOUT</a></li>
+        <ul>
+      </div>
+      <div class="container-fluid">
+        <section class="jumbotron">
+          <h1><i>re</i>LIFT</h1><br />
+          <h3>Revisit Your upLIFT</h3><br /><br />
+        </section>
+        <div class="container-login">
+          <img src="/images/sidebar_images/sunsetlake.jpg" class="img-fluid">
+            <div>
+                <div class="uplift-box">
+                  <h3>Today, I...</h3>
+                  <form action="/uplifts/gallery<%=uplift.id%>?_method=PUT" method="POST">
+                    <!-- <label class="create" for="username">Add a Visual</label><br /> -->
+                    <div class="show">
+                      <%=uplift.type%><br /><br />
+                    </div>
+                    <img class="img-show" src="<%=uplift.img%>"><br /><br />
+                    <p><%=uplift.description%></p><br />
+                    <div class="show-form">
+                      <form action="/uplifts/gallery/<%=uplift.id;%>?_method=DELETE" method="POST">
+                        <a href="/uplifts/gallery/<%=uplift.id;%>/edit" class="btn btn-link">EDIT</a>
+                        <input type="submit" value="DELETE" class="btn btn-link">
+                      </form>
+                    </div>
+                    <!-- <div class="input">
+                      <%#=uplift.description%>
+                      <input class="textbox" type="textarea" name="description" />
+                      <br /><br />
+                    </div> -->
+                    <!-- <label class="create" name="description">Edit Your Expand</label>
+                    <input class="textbox" type="textarea" name="description" value="<%#=uplift.description%>"/><br /><br /> -->
+                    <!-- <input type="submit" value="Edit upLIFT" class="btn btn-login" style="background-color:var(bright-blue)"/> -->
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+    <!-- <div> -->
       <!-- <% include ./partials/nav.ejs %> -->
-      <ul class="main-nav">
-        <li class="left"><button type="button" class="btn btn-outline-info">LOGO GOES HERE</button>
+      <!-- <ul class="main-nav">
+        <li class="left"><a href="/uplifts"><img src="/images/logo/uplift_logo.png" style="background-color:ghostwhite"></a></li>
         <li class="right"><a href="/uplifts/gallery">GALLERY</a></li>
         <li class="right"><a href="/uplifts">LOGOUT</a></li>
       <ul>
     </div>
-    <div class="container-fluid">
-      <section class="jumbotron">
-        <h1>upLIFT</h1><br />
-        <h3>upLIFT Yourself</h3><br /><br />
-        <h4>Today, I...</h4>
-        <div class="main">
-            <p class="col-sm-4">
-              <!-- type -->
-              <div class="heading-uplift">
-                <%=uplift.type%><br /><br />
+    <div class="container-login">
+      <img src="/images/sidebar_images/gratitude.jpg" class="img-fluid">
+        <div>
+          <h1 class="login-header">Revisit Your upLIFT</h1><br />
+            <div class="uplift-box">
+              <h3>Today, I...</h3>
+                <div class="show">
+                  <%=uplift.type%><br /><br />
+                </div>
+                  <img class="img-uplift" src="<%= uplift.img %>"><br /><br />
+                  <div class="input">
+                    <%=uplift.description%>
+                    <input class="textbox" type="textarea" name="description" />
+                <br /><br />
+                  </div>
+                <form action="/uplifts/gallery/<%=uplift.id;%>?_method=DELETE" method="POST">
+                  <a href="/uplifts/gallery/<%=uplift.id;%>/edit" class="btn btn-link">EDIT</a>
+                  <input type="submit" value="DELETE" class="btn btn-link">
+                </form>
               </div>
-              <!-- image -->
-              <img class="img-uplift" src="<%= uplift.img %>"><br /><br />
-              <!-- description -->
-              <div class="description-uplift">
-                <%=uplift.description%>
-              </div>
+            </div>
+        </div>
+    </div> -->
 
+
+    <!--
+        <div class="main">
+            <p class="col-sm-4"> -->
+              <!-- type -->
+              <!-- <div class="heading-uplift">
+                <%=uplift.type%><br /><br />
+              </div> -->
+              <!-- image -->
+              <!-- <img class="img-uplift" src="<%= uplift.img %>"><br /><br /> -->
+              <!-- description -->
+              <!-- <div class="description-uplift">
+                <%=uplift.description%>
+              </div> -->
               <!-- <a href="/uplifts/<%#=uplift.id;%>/edit" class="btn btn-link">EDIT</a> -->
-              <form action="/uplifts/gallery/<%=uplift.id;%>?_method=DELETE" method="POST">
+              <!-- <form action="/uplifts/gallery/<%=uplift.id;%>?_method=DELETE" method="POST">
                 <a href="/uplifts/gallery/<%=uplift.id;%>/edit" class="btn btn-link">EDIT</a>
                 <input type="submit" value="DELETE" class="btn btn-link">
-              </form>
-        </div>
-      </section>
-    </div>
-  </body>
-</html>
+              </form> -->
+        <!-- </div> -->
+      <!-- </section> -->
+    <!-- </div> -->

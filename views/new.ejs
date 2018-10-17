@@ -8,22 +8,57 @@
     <div>
       <!-- <% include ./partials/nav.ejs %> -->
       <ul class="main-nav">
-        <li class="left"><button type="button" class="btn btn-outline-info">LOGO GOES HERE</button>
+        <li class="left"><a href="/uplifts"><img src="/images/logo/uplift_logo.png" style="background-color:ghostwhite"></a></li>
         <li class="right"><a href="/uplifts/gallery">GALLERY</a></li>
         <li class="right"><a href="/uplifts">LOGOUT</a></li>
       <ul>
     </div>
     <div class="container-fluid">
-      <section class="jumbotron">
+      <hr></hr>
+      <!-- <section class="jumbotron">
         <h1>upLIFT</h1><br />
         <h3>Create Your upLIFT</h3><br /><br />
-      </section>
+      </section> -->
+      <div class="container-login">
+        <img src="/images/sidebar_images/gratitude.jpg" class="img-fluid">
+          <div>
+            <h1 class="login-header">Create Your upLIFT</h1><br />
+              <div class="uplift-box">
+                <form action="/uplifts/gallery" method="POST">
+                  <div class="dropdown">
+                      <select name="typeName" id="typeDropDown">
+                        <option value="empty">Today, I...</option>
+                        <option value="adventured">Adventured</option>
+                        <option value="celebrated">Celebrated</option>
+                        <option value="connected">Connected</option>
+                        <option value="created">Created</option>
+                        <option value="enjoyed">Enjoyed</option>
+                        <option value="gave">Gave</option>
+                        <option value="honored">Honored</option>
+                        <option value="laughed">Laughed</option>
+                        <option value="marveled">Marveled</option>
+                        <option value="played">Played</option>
+                        <option value="received">Received</option>
+                        <option value="shared">Shared</option>
+                        <option value="stretched">Stretched</option>
+                      </select><br /><br />
+                  </div>
+                  <!-- <div class="login"> -->
+                    <!-- <form class="login" action="/users" method="POST"> -->
+                      <label class="create" name="description">Expand</label>
+                      <input class="textbox" type="textarea" name="description" /><br /><br />
+                      <input type="submit" value="Create upLIFT" class="btn-login">
+                    </form>
+                  <!-- </div> -->
+              </div>
+          </div>
+      </div>
       <!-- <h4>Today, I...</h4> -->
       <!-- Today, I... -->
-        <div class="main">
-          <form action="/uplifts/gallery" method="POST">
+        <!-- <div class="main"> -->
+          <!-- <form action="/uplifts/gallery" method="POST">
             <div class="dropdown">
-              <!-- <p style="font-size:26px;">Today, I...<br /> -->
+              <p style="font-size:26px;">Today, I...<br />
                 <select name="typeName" id="typeDropDown">
                   <option value="empty">Today, I...</option>
                   <option value="adventured">Adventured</option>
@@ -41,27 +76,6 @@
                   <option value="stretched">Stretched</option>
                 </select><br />
             </div>
-          <br />
-          <p style="font-size:26px;">Add a Visual:</p>
-          <!-- <%# for(let i = 0; i < uplifts.length; i++) { %>
-            if(uplifts.img.value === option.value) {
-              <img>
-            }
-          } -->
-
-
-          <p style="font-size:26px;">Expand:</p>
-            <input class="textbox" type="textarea" name="description" /><br /><br />
-            <!-- Select an image: <input type="image" name="image" /><br /><br /> -->
-          <!-- submit button -->
-          <!-- <form action="/gallery" method="POST"> -->
-            <input type="submit" value="Create upLIFT" class="btn btn-outline-info"/>
-          </form>
-          <!-- <form action="/session?_method=DELETE" method="POST">
-            <input type="submit" value="Logout" class="waves-effect waves-light btn"/>
-          </form> -->
-            <!-- <button type="button" class="btn btn-outline-info">
-            <input type="submit" value="Create upLIFT"/>
           </form> -->
         </div>
     </div>

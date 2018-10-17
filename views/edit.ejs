@@ -6,9 +6,63 @@
   </head>
   <body>
     <div>
+      <div>
+        <!-- <% include ./partials/nav.ejs %> -->
+        <ul class="main-nav">
+          <li class="left"><a href="/uplifts"><img src="/images/logo/uplift_logo.png" style="background-color:ghostwhite"></a></li>
+          <li class="right"><a href="/uplifts/gallery">GALLERY</a></li>
+          <li class="right"><a href="/uplifts">LOGOUT</a></li>
+        <ul>
+      </div>
+      <div class="container-fluid">
+        <section class="jumbotron">
+          <h1><i>re</i>LIFT</h1><br />
+          <h3>Edit Your upLIFT</h3><br /><br />
+        </section>
+        <div class="container-login">
+          <img src="/images/sidebar_images/desertnight.jpg" class="img-fluid">
+            <div>
+              <h1 class="login-header">Edit Your upLIFT</h1><br />
+                <div class="uplift-box">
+                  <form action="/uplifts/gallery<%=uplift.id%>?_method=PUT" method="POST">
+                    <div class="dropdown">
+                        <select name="typeName" id="typeDropDown">
+                          <option value="empty">Today, I...</option>
+                          <option value="adventured">Adventured</option>
+                          <option value="celebrated">Celebrated</option>
+                          <option value="connected">Connected</option>
+                          <option value="created">Created</option>
+                          <option value="enjoyed">Enjoyed</option>
+                          <option value="gave">Gave</option>
+                          <option value="honored">Honored</option>
+                          <option value="laughed">Laughed</option>
+                          <option value="marveled">Marveled</option>
+                          <option value="played">Played</option>
+                          <option value="received">Received</option>
+                          <option value="shared">Shared</option>
+                          <option value="stretched">Stretched</option>
+                        </select><br /><br />
+                    </div>
+                    <!-- <label class="create" for="username">Add a Visual</label><br /> -->
+                    <label class="create" name="description">Edit Your Expand</label>
+                    <input class="textbox" type="textarea" name="description" value="<%=uplift.description%>"/><br /><br />
+                    <input type="submit" value="Edit upLIFT" class="btn btn-login" style="background-color:var(--bright-blue)"/>
+                  </form>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
+
+
       <!-- <% include ./partials/nav.ejs %> -->
-      <ul class="main-nav">
-        <li class="left"><button type="button" class="btn btn-outline-info">LOGO GOES HERE</button>
+      <!-- <ul class="main-nav">
+        <li class="left"><a href="/uplifts"><img src="/images/logo/uplift_logo.png" style="background-color:ghostwhite"></a></li>
         <li class="right"><a href="/uplifts/gallery">GALLERY</a></li>
         <li class="right"><a href="/uplifts">LOGOUT</a></li>
       <ul>
@@ -17,23 +71,20 @@
       <section class="jumbotron">
         <h1>reLIFT</h1><br />
         <h3>Edit your upLIFT</h3><br /><br />
-      </section>
+      </section> -->
         <!-- keep getting error - cannot PUT /uplifts/gallery - makes sense, need to add uplift.id once uplifts are added -->
-          <form action="/uplifts/gallery<%=uplift.id%>?_method=PUT" method="POST">
+          <!-- <form action="/uplifts/gallery<%=uplift.id%>?_method=PUT" method="POST"> -->
             <!-- NEED TO INSERT A DROPDOWN MENU -->
-            Edit upLIFT type: <input type="text" name="type" value="<%=uplift.type%>"/><br /><br />
-            Edit your expand: <input type="textarea" name="description" value="<%=uplift.description%>"/><br /><br />
+            <!-- Edit upLIFT type: <input type="text" name="type" value="<%=uplift.type%>"/><br /><br />
+            Edit your expand: <input type="textarea" name="description" value="<%=uplift.description%>"/><br /><br /> -->
             <!-- Edit your image: <input type="image" name="image" /><br /><br /> -->
           <!-- submit button -->
           <!-- <form action="/gallery" method="POST"> -->
-            <input type="submit" value="Edit upLIFT" class="btn btn-info"/>
-          </form>
+            <!-- <input type="submit" value="Edit upLIFT" class="btn btn-info btn-lg" style="background-color:var(bright-blue)"/>
+          </form> -->
           <!-- <form action="/session?_method=DELETE" method="POST">
             <input type="submit" value="Logout" class="waves-effect waves-light btn"/>
           </form> -->
             <!-- <button type="button" class="btn btn-outline-info">
             <input type="submit" value="Create upLIFT"/>
           </form> -->
-    </div>
-  </body>
-</html>

@@ -99,6 +99,15 @@ app.get('/', (req, res) => {
 //======================
 //       ROUTES
 //======================
+//create a model with a creator
+app.post('/articles', (req, res) => {
+  req.body.author = req.session.currentUser.username;
+  Article.create(req.body, (err, createdArticle) => {
+    res.redirect('/articles');
+  });
+});
+
+
 // // localhost:3000 -> will reroute to 'products'
 // app.get('/', (req, res) => {
 //   res.send('Hello World!');

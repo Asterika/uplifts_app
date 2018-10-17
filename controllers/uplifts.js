@@ -5,6 +5,7 @@
 const express = require('express');
 const router = express.Router();
 const Uplift = require('../models/uplifts.js');
+const User = require('../models/users.js');
 
 //export this module for later use
 module.exports = router;
@@ -89,15 +90,11 @@ router.delete('/gallery/:id', (req, res) => {
 
 //step 7 - create a SHOW ROUTE
 router.get('/:id', (req, res) => {
-//   res.render('show.ejs',
-//   {
-    // uplifts: uplifts[req.params.id]
-//   });
-// });
   Uplift.findById(req.params.id, (err, foundUplift) => {
     res.render('show.ejs',
     {
-      uplift: foundUplift
+      uplift: foundUplift,
+      currentUser: req.session.currentUser
     });
   });
 });

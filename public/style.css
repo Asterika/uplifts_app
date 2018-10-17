@@ -15,6 +15,7 @@ a {
   /* color: darkturquoise; */
   /* color: turquoise; */
   font-weight: bold;
+  text-decoration: none;
 }
 
 a:hover {
@@ -56,6 +57,8 @@ h3 {
   /* color: mediumblue; */
   /* color: darkturquoise; */
   color: var(--deep-blue);
+  font-size: 32px;
+  font-weight: bold;
 }
 
 h4 {
@@ -65,6 +68,11 @@ h4 {
   font-weight: bold;
   margin-left: 520px;
   /* text-align: center; */
+}
+
+p {
+  color: var(--deep-blue);
+  font-size: 20px;
 }
 
 /* holds welcome banner */
@@ -97,6 +105,9 @@ h4 {
 }
 
 .img-fluid {
+  border-radius: 10px;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
   height: auto;
   max-width: 42%;
   /* width: 100%; */
@@ -112,7 +123,7 @@ h4 {
   /* text-shadow: 2px 2px 4px aqua; */
 }
 
-.login-box {
+.login-box, .uplift-box {
   border: 2px solid lightgrey;
   border-radius: 10px;
   box-shadow: 1px 1px 5px #bbb,
@@ -124,6 +135,12 @@ h4 {
   padding-top: 15px;
   /* margin: 60px 45px 50px -20px; */
   width: 40vw;
+}
+
+.uplift-box {
+  margin-top: 20px;
+  padding: 60px 20px 20px 40px;
+  height: 50vw;
 }
 
 .new-user-box {
@@ -138,12 +155,22 @@ h4 {
   width: 40vw;
 }
 
-.login {
+.login, .create, .show {
   color: var(--bright-blue);
   font-size: 28px;
   font-weight: bold;
   margin-top: 36px;
   padding-left: 50px;
+}
+
+.create {
+  margin-bottom: 0px;
+  margin-top: 40px;
+  padding-left: 0px;
+}
+
+.show {
+  margin-left: 85px;
 }
 
 .btn-login {
@@ -153,8 +180,9 @@ h4 {
   box-shadow: none;
   color: white;
   cursor: pointer;
+  font-size: 24px;
   font-weight: bold;
-  margin-top: 15px;
+  margin-top: 45px;
   padding: 8px;
 }
 
@@ -270,9 +298,21 @@ input {
   width: 300px;
 }
 
+.img-show {
+  border-radius: 5px;
+  display: flex;
+  height: 200px;
+  margin-bottom: -20px;
+  margin-left: 65px;
+  margin-top: -30px;
+  object-fit: contain;
+  width: 300px;
+}
+
 /* centering for uplifts within a page */
 .main {
-  margin-left: 470px;
+  margin-left: 600px;
+  margin-top: -700px;
 }
 
 /* main nav class li right items need to float right in the navbar */
@@ -283,17 +323,39 @@ input {
   margin-top: 30px;
   padding: 0px;
 }
-/*
-pushes nav links (Gallery, Create, & Logout) to the right */
+
+.main-show {
+  margin-top: -700px;
+  padding: 50px;
+}
+
+.logout-link {
+  border: none;
+  box-shadow: none;
+  color: var(--bright-blue);
+  text-decoration: none;
+}
+
+.btn-link {
+  border: none;
+  box-shadow: none;
+  color: var(--bright-blue);
+  font-size: 21px;
+  font-weight: bold;
+  margin: -6px 0px 0px 0px;
+}
+
+/* pushes nav links (Gallery, Create, & Logout) to the right  */
 .right {
-  font-size: 20px;
-  margin: 6px 0px 0px 35px;
+  font-size: 21px;
+  margin: 42px 0px 0px 35px;
 }
 
 .textbox {
   border: 1.5px solid #00cad3;
-  width: 440px;
+  width: 420px;
   height: 150px;
+
   /* resize: none; */
   /* max-width: 440px;
   max-height: 150px; */
@@ -311,7 +373,6 @@ pushes nav links (Gallery, Create, & Logout) to the right */
 
 #typeDropDown {
   background-color: dodgerblue;
-  /* background-color: #00cad3; */
   border: 2px solid dodgerblue;
   color: white;
   cursor: pointer;
@@ -319,11 +380,16 @@ pushes nav links (Gallery, Create, & Logout) to the right */
   font-size: 20px;
   font-weight: bold;
   height: 40px;
-  margin-top: 10px;
+  margin-top: 20px;
+  /* margin-left: 110px; */
   opacity: 0.85;
   width: 200px;
 }
 
+.show-form {
+  font-size: 30px;
+  margin-left: 130px;
+}
 /* -----------------------------
           MODALS
 ----------------------------- */
