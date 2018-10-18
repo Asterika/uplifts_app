@@ -7,16 +7,31 @@ const uplifts = [
     img: '/images/adventured - unknown.jpg',
     description: 'Today, I stepped outside my door, not knowing where the path would go...'
   },
+  // {
+  //   type: 'Gave',
+  //   img: '/images/released.jpg',
+  //   description: 'Today, I gave up what was no longer needed so I am free to move forward'
+  // },
+  // {
+  //   type: 'Played',
+  //   img: '/images/stretch-mind1.jpg',
+  //   description: 'Today, I was strategic in assessing and entertaining with all of my options'
+  // },
   {
-    type: 'Honored',
-    img: '/images/honored - spirit.jpg',
-    description: 'Today, I honored my spirit by taking a moment to pause in nature and perceive its gifts'
+    type: 'Connected',
+    img: '/images/connected - work.jpg',
+    description: 'Today, I shared laughs with my co-workers over coffee'
   },
+  // {
+  //   type: 'Created',
+  //   img: '/images/created - music.jpg',
+  //   description: 'Today, I left a legacy of beautiful notes in my wake'
+  // },
   {
     type: 'Marveled',
     img: '/images/marveled - cosmos.jpg',
     description: 'Today, I marveled at the miracle of each tiny life in the vast infinite cosmos'
-  }
+  },
 ]
   //relocate to server - whatever controller will use it
   // {

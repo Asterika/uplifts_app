@@ -102,7 +102,6 @@ router.get('/gallery/:id/edit', (req, res) => {
 
 //step 6 - create DELETE ROUTE
 router.delete('/gallery/:id', (req, res) => {
-  // res.send('deleting');
   Uplift.findByIdAndRemove(req.params.id, (err, data) => {
     res.redirect('/uplifts/gallery');
   });
