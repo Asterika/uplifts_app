@@ -1,5 +1,6 @@
 # uplifts
 
+
 ## Project Concept
 
 The primary goal of this app is to offer users a chance to focus on the positive that happens in their lives every day. As humans, we all have experiences that layer with each passing moment. This often happens so fast that we barely have time to process one event before the next begins. Compounding this, research reveals that our brains tend to amplify what we perceive as negative events far more than the positive. 
@@ -10,14 +11,17 @@ An upLIFT can be *anything* positive that happens in a day - sharing a laugh wit
 
 In this way, upLIFT is a digital journaling tool or gratitude practice of sorts, designed for those on-the-go who wish to record the experiences that inspire them. 
 
+
 ## Getting Started
 
 upLIFT is an app currently hosted via Heroku at https://uplifts.heroku.com/uplifts.
 In order to access the app, simply visit the link above and click Join upLIFT to create your username and password. No additional installations or programs are required to use it.
 
+
 ## Technologies Implemented
 
 This app was created with Node.js, Mongoose, Express, and EJS and was developed using [GitHub Pages](https://pages.github.com/) and [Atom](https://atom.io/). All site images are included courtesty [Unsplash](https://unsplash.com/) and the logo was designed with [Canva](https://www.canva.com/).
+
 
 ## Technical Challenges and Unsolved Issues
 
@@ -41,6 +45,7 @@ There are some minor unresolved issues in this first version of the app, includi
   * I also intended for each upLIFT on the gallery page to be accessed with a modal rather than an additional show page,           though that would not have satisified the assignment's primary requirement of including the 7 Restful Routes.
   * With more time, I would have preferred to feature additional minor styling techniques, such as button effects and precise     positioning of elements. These will be integrated in future versions as I gain more comfort with CSS and frameworks such       as Bootstrap.
   * This version involved more inline styling to override other properties than I would have preferred.
+
 
 ## Future Optimizations
 
