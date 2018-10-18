@@ -18,6 +18,8 @@ const usersController = require('./controllers/users.js');
 const sessionsController = require('./controllers/sessions.js');
 //require the controllers uplifts
 const upliftsController = require('./controllers/uplifts.js');
+//tell server.js to use this controllers file as middleware
+app.use('/uplifts', upliftsController);
 
 
 //======================
@@ -84,8 +86,6 @@ app.use('/users', usersController);
 //tell server.js to use this controller as file as middleware for sessions
 app.use('/sessions', sessionsController);
 
-//tell server.js to use this controllers file as middleware
-app.use('/uplifts', upliftsController);
 
 //WELCOME ROUTE for logged in users
 app.get('/', (req, res) => {
@@ -113,6 +113,7 @@ app.get('/', (req, res) => {
 //for heroku main page
 app.get('/', (req, res) => {
   res.redirect('/uplifts');
+  });
 });
 
 //create a model with a creator
