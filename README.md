@@ -55,3 +55,4 @@ The following is a list of optimizations to be incorporated into future versions
 * Global responsive design features.
 * Mobile version - reminders for users to create upLIFTs throughout the day.
 * An incentive program in which users who create at least three upLIFTs in a day will receive a "gift" in the form of a link     to an inspirational article or video. 
+* I intend for future versions to feature DRY code that is much cleaner and includes clear, consistent commenting throughout.
