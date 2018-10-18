@@ -7,6 +7,21 @@ const router = express.Router();
 const Uplift = require('../models/uplifts.js');
 const User = require('../models/users.js');
 const upliftSeed = require('../models/seed.js');
+const homepage_tiles_capture = [
+  { img: '/images/captured - friends.jpg'},
+  { img: '/images/captured - nature.jpg'},
+  { img: '/images/connected - friends1.jpg'}
+]
+const homepage_tiles_celebrate = [
+  { img: '/images/celebrated - danceoflife.jpg'},
+  { img: '/images/create - art.jpg'},
+  { img: '/images/played.jpg'}
+]
+const homepage_tiles_inspire = [
+  { img: '/images/honored - silence.jpg'},
+  { img: '/images/celebrated - life.jpg'},
+  { img: '/images/marveled - cosmos.jpg'}
+]
 
 //export this module for later use
 module.exports = router;
@@ -14,8 +29,13 @@ module.exports = router;
 //ROUTES
 // localhost:3000 -> will reroute to 'products'
 router.get('/', (req, res) => {
-  res.render('home.ejs');
-  // res.send('Hello World!');
+  res.render('home.ejs', {
+    homepage_tiles_capture: homepage_tiles_capture,
+    homepage_tiles_celebrate: homepage_tiles_celebrate,
+    homepage_tiles_inspire: homepage_tiles_inspire
+    // homepage_tiles_celebrate: homepage_tiles_celebrate,
+    // homepage_tiles_inspire: homepage_tiles_inspire
+  });
 });
 
 // step 2 - create an INDEX ROUTE that will render created uplifts

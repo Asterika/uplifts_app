@@ -3,6 +3,7 @@
   --deep-blue: #2C60A6;
 }
 
+
 a {
   color: var(--bright-blue);
   /* color: tomato; */
@@ -75,12 +76,30 @@ hr {
   /* border-top: 2px solid slateblue; */
   /* border-top: 2px solid blueviolet; */
   border-top: 2px solid mediumslateblue;
+  /* border-top: 2px solid mediumaquamarine; */
   margin-left: -55px;
 }
 
 p {
   color: var(--deep-blue);
   font-size: 20px;
+}
+
+.home-tag {
+  color: var(--bright-blue);
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 180px;
+}
+
+.celebrate {
+  margin-left: 460px;
+  margin-top: 30px;
+}
+
+.inspire {
+  margin-left: 750px;
+  margin-top: 30px;
 }
 
 /* holds welcome banner */
@@ -234,11 +253,20 @@ input {
   padding-top: 10px;
 }
 
-/* settings for each individual uplift */
+.row-home {
+  margin-left: 200px;
+}
+
+/* settings for each individual uplift on index page */
 .col-sm-4 {
   padding-right: 130px;
   text-align: justify;
 }
+
+.col-home {
+  margin-top: -30px;
+}
+
 /* .no-gutters {
   margin-right: 0;
   margin-left: 0;
@@ -297,7 +325,7 @@ input {
 }
 
 /* specs for the image of all uplifts */
-.img-uplift {
+.img-uplift, .img-homepage {
   align-self: center;
   border-radius: 5px;
   /* background-color: rgb(233,236,239); */
@@ -309,6 +337,11 @@ input {
   height: 200px;
   object-fit: contain;
   width: 300px;
+}
+
+.img-homepage {
+  height: 150px;
+  width: 225px;
 }
 
 .img-show {

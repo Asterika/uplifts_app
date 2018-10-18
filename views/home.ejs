@@ -6,23 +6,54 @@
   </head>
   <body>
     <div>
-      <!-- <% include ./partials/nav.ejs %> -->
       <ul class="main-nav">
         <li class="left"><a href="/uplifts"><img src="/images/logo/uplift_logo.png" style="background-color:ghostwhite"></a></li>
         <li class="right"><a href="/sessions/new">LOG IN</a></li>
-        <li class="right"><a href="/users/new">Join upLIFT</a></li>
+        <li class="right"><a href="/users/new">JOIN upLIFT</a></li>
       <ul>
     </div>
-    <!-- <div class="container-fluid">
-      <section class="jumbotron"> -->
-        <h1 style="text-align:center">Welcome to upLIFT!</h1><br />
-        <h3 style="text-align:center"><i>Inspire</i> yourself &nbsp;~ &nbsp;every day</h3><br />
-      <!-- </section> -->
-    <!-- <nav>
-      <ul>
-        <li><a href="/sessions/new">Log In</a></li>
-        <li>><a href="/sessions/new">Join upLIFT</a></li>
-      </ul>
-    </nav> -->
+    <hr></hr>
+    <div class="container-fluid">
+        <h1 style="text-align:center">Welcome to upLIFT!</h1><br /><br />
+        <p class="home-tag"><i>Capture uplifting moments in your day</i></p><br />
+        <div class="row row-home">
+          <% for(let i = 0; i < homepage_tiles_capture.length; i++) { %>
+            <div class="col-sm-3 col-home">
+              <img class="img-homepage" src="<%=homepage_tiles_capture[i].img;%>">
+            </div>
+          <% } %>
+        </div>
+        <p class="home-tag celebrate"><i>Celebrate the positive</i></p><br />
+        <div class="row row-home">
+          <% for(let i = 0; i < homepage_tiles_celebrate.length; i++) { %>
+            <div class="col-sm-3 col-home">
+              <img class="img-homepage" src="<%=homepage_tiles_celebrate[i].img;%>">
+            </div>
+          <% } %>
+        </div>
+        <p class="home-tag inspire"><i>Inspire yourself</i></p><br />
+        <div class="row row-home col-home">
+          <% for(let i = 0; i < homepage_tiles_inspire.length; i++) { %>
+            <div class="col-sm-3">
+              <img class="img-homepage" src="<%=homepage_tiles_inspire[i].img;%>">
+            </div>
+          <% } %>
+        </div>
+    </div>
   </body>
 </html>
+
+<!-- add arrays into JS <file
+assign to variables
+array of images
+for loop to loop through
+put url inside img
+w/in a route - keyname assign value
+
+const adventured = [
+
+]
+
+const connected = [
+
+] -->

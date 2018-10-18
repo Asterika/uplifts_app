@@ -95,6 +95,17 @@ app.get('/', (req, res) => {
   });
 });
 
+//============================
+//  HARDCODED HOMEPAGE TILES
+//============================
+//create a hardcoded array of images for the front page
+//on the home page, loop through this array
+// const homepage_tiles = [
+//   { img: '/images/captured - friends.jpg'},
+//   { img: '/images/captured - nature.jpg'},
+//   { img: '/images/captured - moment.jpg'}
+// ]
+
 
 //======================
 //       ROUTES
