@@ -52,6 +52,7 @@ h1 {
   /* color: mediumblue; */
   /* color: mediumaquamarine; */
   font-weight: bold;
+  /* text-align: center; */
 }
 
 h3 {
@@ -75,7 +76,7 @@ hr {
   /* border-top: 2px solid rgb(237,107,96); */
   /* border-top: 2px solid slateblue; */
   /* border-top: 2px solid blueviolet; */
-  border-top: 2px solid mediumslateblue;
+  border-top: 2.5px solid dodgerblue;
   /* border-top: 2px solid mediumaquamarine; */
   margin-left: -55px;
 }
@@ -90,6 +91,7 @@ p {
   font-size: 24px;
   font-weight: bold;
   margin-left: 180px;
+  margin-top: 25px;
 }
 
 .celebrate {

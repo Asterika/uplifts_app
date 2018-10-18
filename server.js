@@ -16,10 +16,7 @@ const uplifts = require('./models/seed.js');
 const usersController = require('./controllers/users.js');
 //require sessions controller
 const sessionsController = require('./controllers/sessions.js');
-//require the controllers uplifts
-const upliftsController = require('./controllers/uplifts.js');
-//tell server.js to use this controllers file as middleware
-app.use('/uplifts', upliftsController);
+
 
 
 //======================
@@ -88,12 +85,12 @@ app.use('/sessions', sessionsController);
 
 
 //WELCOME ROUTE for logged in users
-app.get('/', (req, res) => {
+// app.get('/', (req, res) => {
   //NOT SURE IF INDEX OR HOME NEEDS TO BE RENDERED HERE
-  res.render('index.ejs', {
-    currentUser: req.session.currentUser
-  });
-});
+//   res.render('index.ejs', {
+//     currentUser: req.session.currentUser
+//   });
+// });
 
 //============================
 //  HARDCODED HOMEPAGE TILES
@@ -110,11 +107,14 @@ app.get('/', (req, res) => {
 //======================
 //       ROUTES
 //======================
+//require the controllers uplifts
+const upliftsController = require('./controllers/uplifts.js');
+//tell server.js to use this controllers file as middleware
+app.use('/uplifts', upliftsController);
 //for heroku main page
 app.get('/', (req, res) => {
   res.redirect('/uplifts');
   });
-});
 
 //create a model with a creator
 app.post('/articles', (req, res) => {
