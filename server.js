@@ -110,6 +110,11 @@ app.get('/', (req, res) => {
 //======================
 //       ROUTES
 //======================
+//for heroku main page
+app.get('/', (req, res) => {
+  res.redirect('/uplifts');
+});
+
 //create a model with a creator
 app.post('/articles', (req, res) => {
   req.body.author = req.session.currentUser.username;
