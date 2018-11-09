@@ -14,7 +14,7 @@ In this way, upLIFT is a digital journaling tool or gratitude practice of sorts,
 
 ## Getting Started
 
-upLIFT is an app currently hosted via Heroku at https://uplifts.heroku.com/uplifts.
+upLIFT is an app currently hosted via Heroku at http://uplifts.heroku.com/uplifts.
 In order to access the app, simply visit the link above and click Join upLIFT to create your username and password. No additional installations or programs are required to use it.
 
 
